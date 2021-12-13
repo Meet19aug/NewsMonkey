@@ -5,9 +5,9 @@ export class NewsItem extends Component {
         let { title, description, imageUrl, newsUrl, author, date, source } = this.props;
         return (
             <div className="card my-3">
-                <div style={{display: 'flex', justifyContent : 'flex-end', position : 'absolute', right : 0}} >
+                <div style={{ display: 'flex', justifyContent: 'flex-end', position: 'absolute', right: 0 }} >
                     <span className="badge rounded-pill bg-danger" style={{ left: '90%', zIndex: 1 }}>
-                    {source ? source : "Unknown"}
+                        {source ? source : "Unknown"}
                     </span>
                 </div>
                 <img src={imageUrl} className="card-img-top" alt="....." />

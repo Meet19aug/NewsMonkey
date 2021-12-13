@@ -24,8 +24,7 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <NavBar />
-        {/* <News setProgress={this.setProgress} apiKey={this.apiKey} pageSize={this.pageSize} country="in" category="science"/> */}
+        <NavBar/>
         <LoadingBar
         height={3}
         color='#f11946'
