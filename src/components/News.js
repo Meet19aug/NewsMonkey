@@ -7,7 +7,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 
 export class News extends Component {
-    apiKey = "ebfbd906995d450291226ee186a8333d"
     static defaultProps = {
         country: 'in',
         pageSize: 8,
@@ -35,7 +34,7 @@ export class News extends Component {
 
     async updateNews(props) {
         this.props.setProgress(15);
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         this.props.setProgress(35);
         let data = await fetch(url);
@@ -53,7 +52,7 @@ export class News extends Component {
 
     async componentDidMount() {
         // console.log("componentDidMount function.")
-        // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=1&pageSize=${this.props.pageSize}`;
+        // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=1&pageSize=${this.props.pageSize}`;
         // this.setState({loading: true});
         // let data = await fetch(url);
         // let parseData =  await data.json();
@@ -65,7 +64,7 @@ export class News extends Component {
 
     handlePrevClick = async () => {
         // console.log("previous");
-        // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+        // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
         // this.setState({loading: true});
         // let data = await fetch(url);
         // let parseData =  await data.json();
@@ -87,7 +86,7 @@ export class News extends Component {
         //     // console.log("running if part.<",Math.ceil(this.state.totalResults/${this.props.pageSize}) );
         // // }else{
         //     // console.log("running else part <", this.state.page+1, ">  < --total limit ", Math.ceil(this.state.totalResults/${this.pageSize}));
-        //     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+        //     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
         //     this.setState({loading: true});
         //     let data = await fetch(url);
         //     let parseData =  await data.json();
@@ -106,7 +105,7 @@ export class News extends Component {
         this.setState({
             page: this.state.page +1,
         })
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         let parseData = await data.json();
         // console.log(parseData);
@@ -129,8 +128,8 @@ export class News extends Component {
                         hasMore={this.state.articles.length !== this.state.totalResults}
                         loader={<Spinner/>}
                     >
-                        <div className="container">
-                <div className="row">
+                    <div className="container">
+                    <div className="row">
                     {/* {!this.state.loading && this.state.articles.map((element) => { */}
                     {this.state.articles.map((element) => {
 
